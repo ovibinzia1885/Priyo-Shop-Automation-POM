@@ -34,4 +34,7 @@ allure generate allure-results --clean -o allure-report
 allure serve allure-results
 ```
 ## Report View
+![image](https://user-images.githubusercontent.com/87892957/141691910-19ebc17c-106b-483a-b8ea-cb888ce4330c.png)
+![image](https://user-images.githubusercontent.com/87892957/141694064-4cf1b61b-2f82-4231-ade0-f6f0e1b56a29.png)
+
 
