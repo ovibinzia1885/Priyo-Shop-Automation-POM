@@ -4,6 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -22,8 +24,27 @@ public class SetUp {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-    @AfterTest
-    public void logout(){
-        driver.close();
+
+    @AfterMethod //AfterMethod annotation - This method executes after every test execution
+     public void screenShot(ITestResult result)  {
+        if (ITestResult.FAILURE == result.getStatus())
+        {
+            try
+            {
+                Utils util = new Utils(driver);
+                util.takeScreenShot();
+            }
+            catch (Exception exception)
+            {
+                System.out.println(exception.toString());
+            }
+        }
     }
-}
+
+
+            @AfterTest
+            public void logout(){
+                driver.close();
+            }
+        }
+

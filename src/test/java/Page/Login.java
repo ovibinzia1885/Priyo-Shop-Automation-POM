@@ -25,7 +25,8 @@ public class Login  {
    WebElement dailyneed;
 
 
-    public Login (WebDriver driver) {
+    public Login (WebDriver driver ) {
+
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -35,7 +36,8 @@ public class Login  {
         usernamebtn.sendKeys(email);
         passwordbtn.sendKeys(password);
         submitbtn.click();
-        return dailyneed.getText();
+        linkbtn.click();
+        return ibnusername.getText();
     }
 
 
