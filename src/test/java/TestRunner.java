@@ -12,10 +12,10 @@ import java.io.IOException;
 
 public class TestRunner extends SetUp{
     Login objLogin;
-    @Test
+    @Test(enabled = false)
     public void loginwith() throws IOException, ParseException {
         driver.get("https://priyoshop.com");
-          objLogin =new Login(driver);
+        objLogin =new Login(driver);
         JSONParser jsonParser=new JSONParser();
         Object obj=jsonParser.parse(new FileReader("./src/test/resources/user.json"));
         JSONObject jsonObject=(JSONObject)obj;
@@ -27,6 +27,20 @@ public class TestRunner extends SetUp{
 
 //        String user1=objLogin.dologin("nazmul35-1885@diu.edu.bd","123456");
 //        Assert.assertEquals(user1,"nazmul35-1885@diu.edu.bd");
+    }
+    @Test
+    public void loginwithWrongPassword() throws IOException, ParseException {
+        driver.get("https://priyoshop.com");
+        objLogin =new Login(driver);
+        JSONParser jsonParser=new JSONParser();
+        Object obj=jsonParser.parse(new FileReader("./src/test/resources/user.json"));
+        JSONObject jsonObject=(JSONObject)obj;
+        String email=(String)jsonObject.get("email") ;
+        String password=(String)jsonObject.get("password");
+
+        String   =objLogin.dologinforNegaticeScenario(email,password);
+        Assert.assertEquals(autherror,"The credentials provided are incorrect");
+
     }
 
 }

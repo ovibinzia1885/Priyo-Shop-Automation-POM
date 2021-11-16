@@ -23,6 +23,8 @@ public class Login  {
    WebElement ibnusername;
    @FindBy(xpath = "//body[1]/div[5]/div[4]/div[3]/div[2]/div[1]/h1[1]")
    WebElement dailyneed;
+   @FindBy(xpath = "//li[contains(text(),'The credentials provided are incorrect')]")
+   WebElement rongauth;
 
 
     public Login (WebDriver driver ) {
@@ -38,6 +40,15 @@ public class Login  {
         submitbtn.click();
         linkbtn.click();
         return ibnusername.getText();
+    }
+
+    public String dologinforNegaticeScenario(String email,String password){
+        linkbtn.click();
+        loginbtn.click();
+        usernamebtn.sendKeys(email);
+        passwordbtn.sendKeys(password);
+        submitbtn.click();
+        return rongauth.getText();
     }
 
 
