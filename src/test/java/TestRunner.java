@@ -38,7 +38,7 @@ public class TestRunner extends SetUp{
         String email=(String)jsonObject.get("email") ;
         String password=(String)jsonObject.get("password");
 
-        String   =objLogin.dologinforNegaticeScenario(email,password);
+        String autherror  =objLogin.dologinforNegaticeScenario(email,password);
         Assert.assertEquals(autherror,"The credentials provided are incorrect");
 
     }
