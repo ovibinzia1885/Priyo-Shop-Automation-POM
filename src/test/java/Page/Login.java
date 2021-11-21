@@ -25,6 +25,8 @@ public class Login  {
    WebElement dailyneed;
    @FindBy(xpath = "//li[contains(text(),'The credentials provided are incorrect')]")
    WebElement rongauth;
+   @FindBy(xpath = "//span[contains(text(),'Login was unsuccessful. Please correct the errors ')]")
+   WebElement rongemail;
 
 
     public Login (WebDriver driver ) {
@@ -42,13 +44,22 @@ public class Login  {
         return ibnusername.getText();
     }
 
-    public String dologinforNegaticeScenario(String email,String password){
+    public String dologinforwrongpassword(String email,String password){
         linkbtn.click();
         loginbtn.click();
         usernamebtn.sendKeys(email);
         passwordbtn.sendKeys(password);
         submitbtn.click();
         return rongauth.getText();
+    }
+
+    public String dologinforinvalidemail(String email,String password){
+        linkbtn.click();
+        loginbtn.click();
+        usernamebtn.sendKeys(email);
+        passwordbtn.sendKeys(password);
+        submitbtn.click();
+        return rongemail.getText();
     }
 
 

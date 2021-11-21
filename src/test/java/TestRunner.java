@@ -28,7 +28,7 @@ public class TestRunner extends SetUp{
 //        String user1=objLogin.dologin("nazmul35-1885@diu.edu.bd","123456");
 //        Assert.assertEquals(user1,"nazmul35-1885@diu.edu.bd");
     }
-    @Test
+    @Test(enabled = false)
     public void loginwithWrongPassword() throws IOException, ParseException {
         driver.get("https://priyoshop.com");
         objLogin =new Login(driver);
@@ -38,8 +38,23 @@ public class TestRunner extends SetUp{
         String email=(String)jsonObject.get("email") ;
         String password=(String)jsonObject.get("password");
 
-        String autherror  =objLogin.dologinforNegaticeScenario(email,password);
+        String autherror  =objLogin.dologinforwrongpassword(email,password);
         Assert.assertEquals(autherror,"The credentials provided are incorrect");
+
+    }
+
+    @Test(enabled = true)
+    public void loginwithinvalidemail() throws IOException, ParseException {
+        driver.get("https://priyoshop.com");
+        objLogin =new Login(driver);
+        JSONParser jsonParser=new JSONParser();
+        Object obj=jsonParser.parse(new FileReader("./src/test/resources/user.json"));
+        JSONObject jsonObject=(JSONObject)obj;
+        String email=(String)jsonObject.get("email") ;
+        String password=(String)jsonObject.get("password");
+
+        String autherror  =objLogin.dologinforinvalidemail(email,password);
+        Assert.assertEquals(autherror,"Login was unsuccessful. Please correct the errors and try again.");
 
     }
 
