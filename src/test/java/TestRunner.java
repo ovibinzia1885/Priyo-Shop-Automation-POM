@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class TestRunner extends SetUp{
     Login objLogin;
+    Utils utils;
     @Test(enabled = false)
     public void loginwith() throws IOException, ParseException {
         driver.get("https://priyoshop.com");
@@ -43,7 +44,7 @@ public class TestRunner extends SetUp{
 
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false )
     public void loginwithinvalidemail() throws IOException, ParseException {
         driver.get("https://priyoshop.com");
         objLogin =new Login(driver);
@@ -56,6 +57,16 @@ public class TestRunner extends SetUp{
         String autherror  =objLogin.dologinforinvalidemail(email,password);
         Assert.assertEquals(autherror,"Login was unsuccessful. Please correct the errors and try again.");
 
+    }
+
+    @Test(enabled = true)
+    public void doLoginWrongPassword() throws IOException, ParseException {
+        driver.get("https://priyoshop.com");
+        objLogin = new Login(driver);
+        utils=new Utils(driver);
+        utils.readJSONArray(1);
+        String autherror =objLogin.dologinforwrongpassword(utils.getEmail(),utils.getPassword());
+        Assert.assertEquals(autherror,"The credentials provided are incorrect");
     }
 
 }
