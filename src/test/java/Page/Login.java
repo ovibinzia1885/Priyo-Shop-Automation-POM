@@ -9,7 +9,7 @@ import javax.xml.xpath.XPath;
 
 public class Login  {
     WebDriver driver;
-    @FindBy(className = "header-links-wrapper")
+    @FindBy(xpath = "//label[contains(text(),'My Account')]")
     WebElement linkbtn;
     @FindBy(xpath = "//a[contains(text(),'Log in')]")
     WebElement loginbtn;
@@ -19,15 +19,19 @@ public class Login  {
     WebElement passwordbtn;
     @FindBy(xpath = "//body/div[5]/div[4]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[2]/input[1]")
     WebElement submitbtn;
+
    @FindBy(xpath = "//a[contains(text(),'nazmul35-1885@diu.edu.bd')]")
    WebElement ibnusername;
    @FindBy(xpath = "//body[1]/div[5]/div[4]/div[3]/div[2]/div[1]/h1[1]")
    WebElement dailyneed;
 
-   @FindBy(xpath = "//body/div[5]/div[4]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]")
+   @FindBy(xpath = "//li[contains(text(),'The credentials provided are incorrect')]")
    WebElement rongauth;
    @FindBy(xpath = "//span[contains(text(),'Login was unsuccessful. Please correct the errors ')]")
    WebElement rongemail;
+   @FindBy(className = "page-title")
+   WebElement logout;
+
 
 
 
@@ -39,26 +43,29 @@ public class Login  {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public String dologin(String email,String password){
+    public String DoLogin(String email,String password){
         linkbtn.click();
         loginbtn.click();
         usernamebtn.sendKeys(email);
         passwordbtn.sendKeys(password);
         submitbtn.click();
         linkbtn.click();
-        return ibnusername.getText();
+        logout.click();
+       return null;
+
+      //  return ibnusername.getText();
     }
 
-    public String dologinforwrongpassword(String email,String password){
+    public String DoLoginForWrongPassword(String email,String password){
         linkbtn.click();
         loginbtn.click();
         usernamebtn.sendKeys(email);
         passwordbtn.sendKeys(password);
         submitbtn.click();
-        return rongauth.getText();
+        return rongemail.getText();
     }
 
-    public String dologinforinvalidemail(String email,String password){
+    public String DoLoginForInvalidEmail(String email,String password){
         linkbtn.click();
         loginbtn.click();
         usernamebtn.sendKeys(email);
