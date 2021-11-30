@@ -17,10 +17,10 @@ public class Login  {
     WebElement usernamebtn;
     @FindBy(id = "Password")
     WebElement passwordbtn;
-    @FindBy(xpath = "//body/div[5]/div[4]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[2]/input[1]")
+    @FindBy(xpath = "//input[@value='Log in']")
     WebElement submitbtn;
 
-   @FindBy(xpath = "//a[contains(text(),'nazmul35-1885@diu.edu.bd')]")
+   @FindBy(xpath = "//a[@class='ico-account']")
    WebElement ibnusername;
    @FindBy(xpath = "//body[1]/div[5]/div[4]/div[3]/div[2]/div[1]/h1[1]")
    WebElement dailyneed;
@@ -50,10 +50,10 @@ public class Login  {
         passwordbtn.sendKeys(password);
         submitbtn.click();
         linkbtn.click();
-        logout.click();
-       return null;
+       // logout.click();
+       return ibnusername.getText();
 
-      //  return ibnusername.getText();
+
     }
 
     public String DoLoginForWrongPassword(String email,String password){

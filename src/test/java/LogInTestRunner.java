@@ -2,15 +2,16 @@ import Page.Login;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.xml.dom.Tag;
+
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class TestRunner extends SetUp{
+public class LogInTestRunner extends SetUp{
     Login objLogin;
     Utils utils;
     @Test(enabled = true)
@@ -20,7 +21,8 @@ public class TestRunner extends SetUp{
         utils=new Utils(driver);
         utils.readJSONArray(0);
         String user=objLogin.DoLogin(utils.getEmail(),utils.getPassword());
-        //Assert.assertEquals(user,"nazmul35-1885@diu.edu.bd");
+        Assert.assertEquals(user,"nazmul35-1885@diu.edu.bd");
+        driver.findElement(By.xpath("//a[contains(text(),'Log out')]")).click();
 
 //        String user1=objLogin.dologin("nazmul35-1885@diu.edu.bd","123456");
 //        Assert.assertEquals(user1,"nazmul35-1885@diu.edu.bd");
