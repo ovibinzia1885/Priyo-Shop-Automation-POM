@@ -31,6 +31,8 @@ public class Login  {
    WebElement rongemail;
    @FindBy(className = "page-title")
    WebElement logout;
+   @FindBy(xpath = "//span[normalize-space()='×']")
+   WebElement cross;
 
 
 
@@ -44,6 +46,7 @@ public class Login  {
         PageFactory.initElements(driver, this);
     }
     public String DoLogin(String email,String password){
+       // cross.click();
         linkbtn.click();
         loginbtn.click();
         usernamebtn.sendKeys(email);

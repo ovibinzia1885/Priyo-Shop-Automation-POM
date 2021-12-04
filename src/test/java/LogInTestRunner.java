@@ -15,8 +15,12 @@ public class LogInTestRunner extends SetUp{
     Login objLogin;
     Utils utils;
     @Test(enabled = true)
-    public void validLogin() throws IOException, ParseException {
+    public void validLogin() throws IOException, ParseException, InterruptedException {
         driver.get("https://priyoshop.com");
+        Thread.sleep(10000);
+        //driver.findElement(By.className("close")).click();
+
+        driver.findElement(By.xpath("//body/div[@id='myModal']/div[1]/div[1]/div[1]/button[1]")).click();
         objLogin =new Login(driver);
         utils=new Utils(driver);
         utils.readJSONArray(0);
