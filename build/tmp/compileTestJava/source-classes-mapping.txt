@@ -1,8 +1,8 @@
-SetUp.java
- SetUp
+Setup/SetUp.java
+ Setup.SetUp
 Page/Login.java
  Page.Login
-Utils.java
- Utils
-LogInTestRunner.java
- LogInTestRunner
+Utils/Utils.java
+ Utils.Utils
+TestRunner/LogInTestRunner.java
+ TestRunner.LogInTestRunner

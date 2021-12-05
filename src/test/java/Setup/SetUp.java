@@ -1,9 +1,9 @@
+package Setup;
 
+import Utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -15,7 +15,8 @@ import java.util.concurrent.TimeUnit;
 
 public class SetUp {
     public WebDriver driver;
-    @BeforeTest
+    @BeforeTest(groups = "login_positive")
+    // for login TestRunner use group "login_positive"
     public void setUp() throws IOException {
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--headed");
