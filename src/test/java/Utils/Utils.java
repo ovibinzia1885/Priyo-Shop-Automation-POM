@@ -60,4 +60,10 @@ public class Utils {
       setEmail((String) jsonobj.get("email"));
       setPassword((String) jsonobj.get("password"));
     }
+
+    public String generateRandomEmail(int min, int max) {
+        double id= Math.random()*(max-min)+min;
+        String email="test"+(int)id+"@grr.la";
+        return email;
+    }
 }
