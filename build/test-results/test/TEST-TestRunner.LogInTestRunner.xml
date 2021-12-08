@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestRunner.LogInTestRunner" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-06T14:23:11" hostname="DESKTOP-64KE9LQ" time="71.664">
-  <properties/>
-  <testcase name="validLogin" classname="TestRunner.LogInTestRunner" time="71.664"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

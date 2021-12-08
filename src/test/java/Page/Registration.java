@@ -61,7 +61,7 @@ public class Registration {
      btnemail.sendKeys(email);
      JSONObject obj = new JSONObject();
      obj.put("email", email);
-     obj.put("password", "P@ssword123");
+     obj.put("password", "123456");
      FileWriter file = new FileWriter("./src/test/resources/user.json");
      file.write(obj.toJSONString());
      file.flush();
@@ -78,17 +78,6 @@ public class Registration {
      city.deselectByIndex(2);
      checkboxbtn.click();
      submitbtn.click();
-
-
-
-
-
-
-
-
-
-
-
 
 
  }

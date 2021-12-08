@@ -2,7 +2,11 @@ Setup/SetUp.java
  Setup.SetUp
 Page/Login.java
  Page.Login
+TestRunner/RegistrationTestRunner.java
+ TestRunner.RegistrationTestRunner
 Utils/Utils.java
  Utils.Utils
 TestRunner/LogInTestRunner.java
  TestRunner.LogInTestRunner
+Page/Registration.java
+ Page.Registration

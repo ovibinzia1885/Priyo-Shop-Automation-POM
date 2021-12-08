@@ -15,7 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 public class SetUp {
     public WebDriver driver;
-    @BeforeTest(groups = "login")
+   // @BeforeTest(groups = "login")
+    @BeforeTest(groups = "Registration")
+
     // for login TestRunner use group "login_positive"
     public void setUp() throws IOException {
         ChromeOptions ops = new ChromeOptions();
