@@ -71,11 +71,14 @@ public class Registration {
      confirmpassword.sendKeys("123456");
      streataddress.sendKeys("Feni,masterpara");
      Select country=new Select(dropdowncountryid);
-     country.deselectByIndex(1);
+     //country.deselectByIndex(1);
+     country.selectByValue("10");
      Select state=new Select(dropdownstateprovience);
-     state.deselectByIndex(2);
+     //state.deselectByIndex(2);
+     state.selectByValue("79");
      Select city=new Select(dropdownCity);
-     city.deselectByIndex(2);
+     //city.deselectByIndex(2);
+     city.selectByValue("Banaripara");
      checkboxbtn.click();
      submitbtn.click();
 
