@@ -49,6 +49,8 @@ public class Purchitem {
     WebElement checkitem;
     @FindBy(xpath = "//h2[contains(text(),'Offer')]")
     WebElement offer;
+    @FindBy(xpath = "//a[normalize-space()='KAY KRAFT']")
+    WebElement addcardsms;
     public Purchitem(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -68,20 +70,20 @@ public class Purchitem {
         return dresssearch.getText();
     }
 
-    public void AddCard() throws InterruptedException {
+    public String AddCard() throws InterruptedException {
         imgitem.get(1).click();
         childitem.click();
         Thread.sleep(1000);
         addcard.click();
-
+        return addcardsms.getText();
     }
 
     public String CheckCard(){
         checkitem.click();
         confiromoderbtn.click();
         return offer.getText();
-
-
     }
+
+
 
 }

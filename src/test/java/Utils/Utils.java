@@ -66,4 +66,14 @@ public class Utils {
         String email="test"+(int)id+"@grr.la";
         return email;
     }
+
+
+    public void readJSONFile() throws IOException, ParseException {
+        JSONParser jsonParser = new JSONParser();
+        Object obj = jsonParser.parse(new FileReader("./src/test/resources/user.json"));
+        JSONObject userObj = (JSONObject) obj;
+        setEmail((String)userObj.get("email"));
+        setPassword((String)userObj.get("password"));
+    }
+
 }
