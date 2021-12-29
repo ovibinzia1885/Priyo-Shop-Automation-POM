@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestRunner.RegistrationTestRunner" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-10T05:13:06" hostname="DESKTOP-64KE9LQ" time="36.146">
-  <properties/>
-  <testcase name="DoRegistration" classname="TestRunner.RegistrationTestRunner" time="36.146"/>
-  <system-out><![CDATA[{"password":"123456","email":"test889484@grr.la"}]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

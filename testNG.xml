@@ -13,16 +13,29 @@
 <!--    </test>-->
 
 
+<!--    <test name="E-commerce portal login">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Registration">-->
+
+<!--                </include>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="TestRunner.RegistrationTestRunner"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
     <test name="E-commerce portal login">
         <groups>
             <run>
-                <include name="Registration">
+                <include name="purchitem">
 
                 </include>
             </run>
         </groups>
         <classes>
-            <class name="TestRunner.RegistrationTestRunner"/>
+            <class name="TestRunner.PurchItemTestRunner"/>
         </classes>
     </test>
 

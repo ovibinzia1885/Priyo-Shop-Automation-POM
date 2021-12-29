@@ -16,7 +16,8 @@ import java.util.concurrent.TimeUnit;
 public class SetUp {
     public WebDriver driver;
    // @BeforeTest(groups = "login")
-    @BeforeTest(groups = "Registration")
+   // @BeforeTest(groups = "Registration")
+   @BeforeTest(groups = "justify")
 
     // for login TestRunner use group "login_positive"
     public void setUp() throws IOException {

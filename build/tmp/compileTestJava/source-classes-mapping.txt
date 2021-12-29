@@ -1,7 +1,11 @@
+TestRunner/PurchItemTestRunner.java
+ TestRunner.PurchItemTestRunner
 Setup/SetUp.java
  Setup.SetUp
 Page/Login.java
  Page.Login
+Page/Purchitem.java
+ Page.Purchitem
 TestRunner/RegistrationTestRunner.java
  TestRunner.RegistrationTestRunner
 Utils/Utils.java
