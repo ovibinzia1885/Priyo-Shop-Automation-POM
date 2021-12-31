@@ -37,6 +37,15 @@
         <classes>
             <class name="TestRunner.PurchItemTestRunner"/>
         </classes>
+        <groups>-->
+                    <run>
+                        <include name="justify">
+
+                        </include>
+                    </run>
+                </groups>
+
+
     </test>
 
 

@@ -51,15 +51,20 @@ public class Purchitem {
     WebElement offer;
     @FindBy(xpath = "//a[normalize-space()='KAY KRAFT']")
     WebElement addcardsms;
+    @FindBy(xpath = "//a[normalize-space()='Grocery & Daily Needs (bKash Payment 16% Cashback)']")
+    WebElement Cashback;
+    @FindBy(xpath = "//div[@class='side-2']//h1[contains(text(),'Grocery Items')]")
+    WebElement groceryitem;
     public Purchitem(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
 
-    public boolean Checkheading(){
-        wait=new WebDriverWait(driver,30);
-        boolean status=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Hijab Combo-UP TO 56% DISCOUNT (bKash Payment 16% "))).isDisplayed();
-        return status;
+    public String Checkheading(){
+       Cashback.click();
+       return groceryitem.getText();
+
+
     }
 
     public String SearchItem() throws InterruptedException {

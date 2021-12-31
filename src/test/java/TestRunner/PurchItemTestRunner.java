@@ -32,8 +32,8 @@ public class PurchItemTestRunner extends SetUp {
     @Test(groups = "justify")
     public void CheckHeading(){
         objPurchase = new Purchitem (driver);
-        boolean status=objPurchase.Checkheading();
-        Assert.assertEquals(status,true);
+        String gery=objPurchase.Checkheading();
+        Assert.assertEquals(gery,"Grocery Items");
     }
     @Test(groups = "justify")
     public void CheckSearBox() throws InterruptedException {
