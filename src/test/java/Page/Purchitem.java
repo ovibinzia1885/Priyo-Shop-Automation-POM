@@ -55,14 +55,15 @@ public class Purchitem {
     WebElement Cashback;
     @FindBy(xpath = "//div[@class='side-2']//h1[contains(text(),'Grocery Items')]")
     WebElement groceryitem;
-    public Purchitem(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+
+    public Purchitem(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    public String Checkheading(){
-       Cashback.click();
-       return groceryitem.getText();
+    public String Checkheading() {
+        Cashback.click();
+        return groceryitem.getText();
 
 
     }
@@ -83,12 +84,11 @@ public class Purchitem {
         return addcardsms.getText();
     }
 
-    public String CheckCard(){
+    public String CheckCard() {
         checkitem.click();
         confiromoderbtn.click();
         return offer.getText();
     }
-
 
 
 }
