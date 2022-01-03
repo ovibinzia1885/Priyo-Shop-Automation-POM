@@ -15,10 +15,10 @@ import java.util.concurrent.TimeUnit;
 
 public class SetUp {
     public WebDriver driver;
-   // @BeforeTest(groups = "login")
-   // @BeforeTest(groups = "Registration")
-   @BeforeTest(groups = "justify")
 
+    // @BeforeTest(groups = "login")
+    // @BeforeTest(groups = "Registration")
+    @BeforeTest(groups = "purchitem")
     // for login TestRunner use group "login_positive"
     public void setUp() throws IOException {
         ChromeOptions ops = new ChromeOptions();
@@ -30,25 +30,21 @@ public class SetUp {
     }
 
     @AfterMethod //AfterMethod annotation - This method executes after every test execution
-     public void screenShot(ITestResult result)  {
-        if (ITestResult.FAILURE == result.getStatus())
-        {
-            try
-            {
+    public void screenShot(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
                 Utils util = new Utils(driver);
                 util.takeScreenShot();
-            }
-            catch (Exception exception)
-            {
+            } catch (Exception exception) {
                 System.out.println(exception.toString());
             }
         }
     }
 
 
-            @AfterTest
-            public void logout(){
-                driver.close();
-            }
-        }
+    @AfterTest
+    public void logout() {
+        driver.close();
+    }
+}
 
