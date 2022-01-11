@@ -19,6 +19,7 @@
 ## Prerequisite:
 1. Need to install jdk 1.8
 2. Need good internet connectivity
+3. Check all xpath and id or class name not updated if site element and locator project will not work .
 
 ## Run the automation script:
 1. Open cmd to the project folder
